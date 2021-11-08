@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tunes4tuesday": {
+      "hosting": {
+        "tunes4tuesday": [
+          "tunes4tuesday"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tunes4tuesday"
+  }
+}
