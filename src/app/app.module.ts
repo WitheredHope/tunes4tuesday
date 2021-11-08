@@ -10,9 +10,13 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthButtonComponent } from './auth-button/auth-button.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,11 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions())
+    provideFunctions(() => getFunctions()),
+    AuthModule.forRoot({
+      domain: 'dev-fvz9rjfa.eu.auth0.com',
+      clientId: 'wXfEUVYWX9l6ZDi2I2njsFi6UJYaTRG4'
+    })
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
